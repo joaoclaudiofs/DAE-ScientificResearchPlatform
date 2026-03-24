@@ -1,0 +1,37 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjb2xhYkBtYWlsLnB0IiwiaWF0IjoxNzY5MTg2MzE1LCJleHAiOjE3NjkxODk5MTV9.AY8_j7d8siiqUmMGOI_AFJ_FzKb0RSrG74xW6K_aLaQHhptZqLUgTW2Ln9cFu-OA
+
+###EP22. Create tag
+POST {{BASE_URL}}/tags
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "name": "nova tag",
+  "visible": true
+}
+
+###EP23. Delete tag
+DELETE {{BASE_URL}}/tags/1
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP24. Change tag visibility
+PUT {{BASE_URL}}/tags/1/visibility
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "public": false
+}
+
+###EP25. Get tags
+GET {{BASE_URL}}/tags
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP39. Get all visible tags
+GET {{BASE_URL}}/tags/visible
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+

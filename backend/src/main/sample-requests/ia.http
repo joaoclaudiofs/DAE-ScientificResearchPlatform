@@ -1,0 +1,12 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MTg0NDQ4LCJleHAiOjE3NjkxODgwNDh9.3vcpwLRH5o0nELgictSWe2uwdFlLrsoEV9rleiNaD55kitHyyJToBILWW1Sqj7gp
+
+###EP41. Summarize using AI
+POST {{BASE_URL}}/ia/summary
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "title": "Os Lusíadas",
+  "text": "Os Lusíadas é uma obra de poesia épica do escritor português Luís Vaz de Camões, a primeira epopeia portuguesa publicada em versão impressa. Provavelmente iniciada em 1556 e concluída em 1571, foi publicada em Lisboa em 12 de março de 1572,[1][2] no período literário do Classicismo, ou Renascimento tardio, três anos após o regresso do autor do Oriente, via Moçambique."
+}

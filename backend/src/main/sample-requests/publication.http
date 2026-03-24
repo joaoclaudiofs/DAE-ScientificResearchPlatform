@@ -1,0 +1,88 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjb2xhYkBtYWlsLnB0IiwiaWF0IjoxNzY5MTg2MzE1LCJleHAiOjE3NjkxODk5MTV9.AY8_j7d8siiqUmMGOI_AFJ_FzKb0RSrG74xW6K_aLaQHhptZqLUgTW2Ln9cFu-OA
+
+###EP09. Get publications
+GET {{BASE_URL}}/publications
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP36. Get hidden publications
+GET {{BASE_URL}}/publications/hidden
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP10. Get my publications
+GET {{BASE_URL}}/publications/me
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP11. Get publication
+GET {{BASE_URL}}/publications/1
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP13. Get publication
+DELETE {{BASE_URL}}/publications/1
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP14. Update Publication
+PUT {{BASE_URL}}/publications/1
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "name": "novo titulo",
+    "description": "nova descrição"
+}
+
+###EP15. Add rating
+POST {{BASE_URL}}/publications/1/ratings
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "value": 5
+}
+
+###EP16. Remove rating
+DELETE {{BASE_URL}}/publications/1/ratings/1
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP17. Add tag
+POST {{BASE_URL}}/publications/1/tag
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "id": 1
+}
+
+###EP18. Remove tag
+DELETE {{BASE_URL}}/publications/1/tag/1
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP19. Add comment
+POST {{BASE_URL}}/publications/1/comments
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "text": "top"
+}
+
+###EP20. Change comment visibility
+PUT {{BASE_URL}}/publications/1/comments/1/visibility
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "visible": true
+}
+
+###EP21. Get comments
+GET {{BASE_URL}}/publications/1/comments
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}

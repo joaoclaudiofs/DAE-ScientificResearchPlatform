@@ -1,0 +1,21 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MTc5ODQ3LCJleHAiOjE3NjkxODM0NDd9.vmxokroNtYEquY2ElFd7ZPTZZOU_QkKSV72BiDC7cbzNkMsfPLGRriDKB9hG9Z5u
+
+###EP26. Create area
+POST {{BASE_URL}}/areas
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "name": "nova area"
+}
+
+###EP27. Delete area
+DELETE {{BASE_URL}}/areas/4
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP28. Get areas
+GET {{BASE_URL}}/areas
+Accept: application/json
+Authorization: Bearer {{TOKEN}}

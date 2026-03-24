@@ -1,0 +1,90 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MTc2MDg2LCJleHAiOjE3NjkxNzk2ODZ9.TGTpSdO-FpWGSGwfJNBcpJ1ZJz58i9kDA7TlsBRxwDoNTpuz4vZWPxYSt32CAWv2
+
+###EP01. Get all users
+GET {{BASE_URL}}/users
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP02. Get user
+GET {{BASE_URL}}/users/2
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP34. Update user
+PATCH {{BASE_URL}}/users/2
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "name": "novonome",
+    "email": "novomail@mail.pt",
+    "password": "novapassword",
+    "role": 1,
+    "active": true
+}
+
+###EP03. Post new user
+POST {{BASE_URL}}/users
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "name": "João",
+    "email": "joao@mail.pt",
+    "password": "123",
+    "active": true
+}
+
+###EP04. Set user active status
+PUT {{BASE_URL}}/users/2/active
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "active": false
+}
+
+###EP05. Change user role
+PUT {{BASE_URL}}/users/2/role
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "role": 2
+}
+
+###EP06. Delete user
+DELETE {{BASE_URL}}/users/2
+Authorization: Bearer {{TOKEN}}
+
+###EP07. Subscribe to tag
+POST {{BASE_URL}}/users/me/tags
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "tag": 1
+}
+
+###EP08. Unsubscribe from tag
+DELETE {{BASE_URL}}/users/me/tags/1
+Authorization: Bearer {{TOKEN}}
+
+###EP34. Reset password
+PATCH {{BASE_URL}}/users/me/password
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "password": "novapassword"
+}
+
+###EP35. Reset email
+POST {{BASE_URL}}/users/me/email
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "email": "r@mail.pt"
+}

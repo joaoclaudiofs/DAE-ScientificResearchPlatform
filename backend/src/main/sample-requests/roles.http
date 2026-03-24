@@ -1,0 +1,7 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MDg5MDU1LCJleHAiOjE3NjkwOTI2NTV9.oOM255CyYtw4X5dDVKwa_6q4ECs0uvlU0AdPxUJRTDSkR1MqmmwBvQiCt8utdkQ7
+
+###EP40. Get all roles
+GET {{BASE_URL}}/roles
+Accept: application/json
+Authorization: Bearer {{TOKEN}}

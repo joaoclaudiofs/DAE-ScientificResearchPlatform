@@ -1,0 +1,12 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MTg0NDQ4LCJleHAiOjE3NjkxODgwNDh9.3vcpwLRH5o0nELgictSWe2uwdFlLrsoEV9rleiNaD55kitHyyJToBILWW1Sqj7gp
+
+###EP29. Get history
+GET {{BASE_URL}}/history/me
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP30. Get user history
+GET {{BASE_URL}}/history/1
+Accept: application/json
+Authorization: Bearer {{TOKEN}}

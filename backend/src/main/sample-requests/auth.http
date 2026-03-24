@@ -1,0 +1,43 @@
+@BASE_URL = http://localhost:8080/daeProjeto/api
+@TOKEN = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnB0IiwiaWF0IjoxNzY5MTg2MjU1LCJleHAiOjE3NjkxODk4NTV9.HGg1JzhISaFit_vOSL9Ra_c2HvJDcRwuiIQTCN2vIBAZRUJVG13hNTvslFPVmMSl
+
+###EP31. Login as admin
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin@mail.pt",
+    "password": "123"
+}
+
+###EP31. Login as responsavel
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "r@mail.pt",
+  "password": "123"
+}
+
+###EP31. Login as colab
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "colab@mail.pt",
+    "password": "123"
+}
+
+###EP32. Logout
+POST {{BASE_URL}}/auth/logout
+Accept: application/json
+Authorization: Bearer {{TOKEN}}
+
+###EP33. Recover
+POST {{BASE_URL}}/auth/recover
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "email": "colab@mail.pt"
+}
